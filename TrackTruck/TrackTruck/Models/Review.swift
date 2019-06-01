@@ -18,34 +18,38 @@ struct Review {
     var content:String = ""
     var title: String = ""
     var date: String = ""
-    
+
     static func parseReviewJSONData(data: Data)-> [Review]{
-        var reviews = [Review]()
+        var allReviews = [Review]()
         do{
            let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            
+
            //parse JSON
-            if let reviewList = jsonResult as? [Dictionary<String,AnyObject>]{
-                for review in reviewList{
+            if let reviewList = jsonResult as? [String: Any]{
+              let reviews = reviewList["Reviews"] as! [[String: Any]]
+                for review in reviews{
                     var newReview = Review()
+                    
                     newReview.content = review["content"] as! String
                     newReview.date = review["date"] as! String
                     newReview.title = review["title"] as! String
-                    newReview.foodtruck_id = review["foodtruck_id"] as! Int
                     newReview.review_id = review["review_id"] as! Int
-                    
-                    let user = review["users"] as! Dictionary<String,AnyObject>
+
+                    let foodtruck = review["foodtrucks"] as! [String: Any]
+                    newReview.foodtruck_id = review["foodtruck_id"] as! Int
+
+                    let user = review["users"] as! [String: Any]
                     newReview.user_id = user["user_id"] as! Int
                     newReview.name = user["name"] as! String
                     newReview.username = user["username"] as! String
                     newReview.phone_number = user["phone_number"] as! String
-                    
-                    reviews.append(newReview)
+
+                    allReviews.append(newReview)
                 }
             }
         }catch let err{
             print(err)
         }
-        return reviews
+        return allReviews
     }
 }

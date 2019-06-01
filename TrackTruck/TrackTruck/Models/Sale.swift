@@ -12,33 +12,33 @@ struct Sale{
     var employeeName: String = ""
     var content: String = ""
     var date: String = ""
-    var amount: Double = 0.0
-    
+    var value: Double = 0.0
+
     static func parseSaleJSONData(data: Data)-> [Sale] {
-       var allsales = [Sale]()
-        
+       var allSales = [Sale]()
+
         do{
             let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            
+
             //parse JSON
-            if let saleList = jsonResult as? [Dictionary<String,AnyObject>]{
-                let sales = saleList[2] as! [Dictionary<String,AnyObject>]
+            if let saleList = jsonResult as? [String: Any]{
+                let sales = saleList["SalesRecords"] as! [[String:Any]]
                 for sale in sales{
                     var newSale = Sale()
-                    newSale.amount = sale["value"] as! Double
+                    newSale.value = sale["value"] as! Double
                     newSale.content = sale["content"] as! String
                     newSale.date = sale["date"] as! String
-                    
-                    let employee = sale["employees"] as! Dictionary<String,AnyObject>
+
+                    let employee = sale["employees"] as! [String: Any]
                     newSale.employeeName = employee["name"] as! String
-                    
-                    allsales.append(newSale)
+
+                    allSales.append(newSale)
                 }
             }
         }catch let err{
             print(err)
         }
-        return allsales
+        return allSales
     }
-    
+
 }

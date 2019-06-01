@@ -11,7 +11,7 @@ import CoreLocation
 import MapKit
 
 class Foodtruck : NSObject, MKAnnotation{
-    
+
     var id: Int = 1
     var name: String = ""
     var food_type: String = ""
@@ -20,22 +20,23 @@ class Foodtruck : NSObject, MKAnnotation{
     var longitude: Double = 0.0
     var owner_id: Int = 1
     var phone: String = ""
-    
+
     @objc var title: String?
     @objc var subtitle: String?
     @objc var coordinate: CLLocationCoordinate2D{
         return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
     }
-    
+
     static func parseFoodtruckJSONData(data: Data)->[Foodtruck]{
-        var foodtrucks = [Foodtruck]()
-        
+        var allFoodtrucksList = [Foodtruck]()
+
         do{
             let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            
+
             //parse JSON
-            if let trucks = jsonResult as? [Dictionary<String, AnyObject>]{
-                for truck in trucks{
+            if let trucksList = jsonResult as? [String: Any]{
+              let foodtrucks = truckList["Foodtrucks"] as! [[String: Any]]
+                for truck in foodtrucks{
                     let newTruck = Foodtruck()
                     newTruck.id = truck["foodtruck_id"] as! Int
                     newTruck.name = truck["name"] as! String
@@ -44,19 +45,19 @@ class Foodtruck : NSObject, MKAnnotation{
                     newTruck.longitude = truck["longitude"] as! Double
                     newTruck.latitude = truck["latitude"] as! Double
                     newTruck.phone = truck["phone_number"] as! String
-                    
-                    let aux_ownerId = truck["owners"] as! Dictionary<String,AnyObject>
-                    newTruck.owner_id = aux_ownerId["owner_id"] as! Int
-                    
+
+                    let owner = truck["owners"] as! [String: Any]
+                    newTruck.owner_id = owner["owner_id"] as! Int
+
                     newTruck.title = newTruck.name
                     newTruck.subtitle = newTruck.food_type
-                    
-                    foodtrucks.append(newTruck)
+
+                    allFoodtrucksList.append(newTruck)
                 }
             }
         }catch let err{
             print(err)
         }
-        return foodtrucks
+        return allFoodtrucksList
     }
 }
