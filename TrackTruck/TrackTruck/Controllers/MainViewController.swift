@@ -26,4 +26,7 @@ extension MainViewController: DataServiceDelegate{
     func reviewsLoaded() {
     
     }
+    func salesLoaded() {
+        
+    }
 }
