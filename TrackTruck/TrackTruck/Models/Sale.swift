@@ -22,7 +22,7 @@ struct Sale{
 
             //parse JSON
             if let saleList = jsonResult as? [String: Any]{
-                let sales = saleList["SalesRecords"] as! [[String:Any]]
+                let sales = saleList["SalesRecords"] as! [[String: Any]]
                 for sale in sales{
                     var newSale = Sale()
                     newSale.value = sale["value"] as! Double

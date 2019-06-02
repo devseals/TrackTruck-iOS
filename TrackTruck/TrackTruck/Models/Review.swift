@@ -36,7 +36,7 @@ struct Review {
                     newReview.review_id = review["review_id"] as! Int
 
                     let foodtruck = review["foodtrucks"] as! [String: Any]
-                    newReview.foodtruck_id = review["foodtruck_id"] as! Int
+                    newReview.foodtruck_id = foodtruck["foodtruck_id"] as! Int
 
                     let user = review["users"] as! [String: Any]
                     newReview.user_id = user["user_id"] as! Int

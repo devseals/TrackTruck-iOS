@@ -35,7 +35,7 @@ class Foodtruck : NSObject, MKAnnotation{
 
             //parse JSON
             if let trucksList = jsonResult as? [String: Any]{
-              let foodtrucks = truckList["Foodtrucks"] as! [[String: Any]]
+              let foodtrucks = trucksList["Foodtrucks"] as! [[String: Any]]
                 for truck in foodtrucks{
                     let newTruck = Foodtruck()
                     newTruck.id = truck["foodtruck_id"] as! Int
