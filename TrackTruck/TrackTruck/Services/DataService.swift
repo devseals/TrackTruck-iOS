@@ -11,6 +11,7 @@ import Foundation
 protocol DataServiceDelegate : class {
     func trucksLoaded()
     func reviewsLoaded()
+    func salesLoaded()
 }
 
 class DataService {
@@ -52,6 +53,40 @@ class DataService {
         task.resume()
         session.finishTasksAndInvalidate()
     }
+    
+    
+    //GET all sales
+    func getSales(){
+        let sessionConfig = URLSessionConfiguration.default
+        
+        //Create session and optionally set a URLSessionDelegate
+        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+        
+        //Create get request
+        guard let URL = URL(string: GET_OWNER_SALES) else { return }
+        var request = URLRequest(url:  URL)
+        request.httpMethod = "GET"
+        
+        let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+            if(error==nil){
+                //success
+                let statusCode = (response as! HTTPURLResponse).statusCode
+                print("URL SESSION SUCCEDED : HTTP:\(statusCode)")
+                if let data = data {
+                    self.sales = Sale.parseSaleJSONData(data: data)
+                    self.delegate?.salesLoaded()
+                }
+            }
+            else{
+                //Failure
+                print("Session Failed : \(error!.localizedDescription)")
+            }
+        })
+        
+        task.resume()
+        session.finishTasksAndInvalidate()
+    }
+    
     
     //GET all reviews for foodtruck
     func getReviews(for truck: Foodtruck){
@@ -154,13 +189,19 @@ class DataService {
     //POST A REVIEW
     func createReview(foodTruckId: Int, content: String, title: String, userId: Int, completion: @escaping callback){
         
+        //Set Date
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let formattedDate = format.string(from: date)
+        
         //Construct JSON
         let json: [String:Any] = [
             "user_id":userId,
             "foodtruck_id":foodTruckId,
             "content": content,
             "title": title,
-            "date": "2019-04-27 12:00:00"
+            "date": formattedDate
         ]
         
         do{
@@ -213,5 +254,75 @@ class DataService {
         }
         
     }
+    
+    
+    //POST A SALE
+    func createSale(employee_id: Int, value: Double, content: String, completion: @escaping callback){
+        
+        //Set Date
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let formattedDate = format.string(from: date)
+        
+        //Construct JSON
+        let json: [String:Any] = [
+            "employee_id": employee_id,
+            "value": value,
+            "date": formattedDate,
+            "content" :content
+        ]
+        
+        do{
+            //Serialize JSON
+            let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            
+            let sessionConfig = URLSessionConfiguration.default
+            
+            let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+            
+            guard let URL = URL(string: "\(REGISTER_SALE)") else {return}
+            
+            var request = URLRequest(url: URL)
+            request.httpMethod = "POST"
+            
+            guard let token = AuthService.instance.authToken else{
+                completion(false)
+                return
+            }
+            
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            request.httpBody = jsonData
+            
+            let task = session.dataTask(with: request, completionHandler:  { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+                if(error == nil){
+                    //success
+                    let statusCode = (response as! HTTPURLResponse).statusCode
+                    print("URL SESSION SUCCEDED : HTTP:\(statusCode)")
+                    if statusCode != 200{
+                        completion(false)
+                        return
+                    }else{
+                        completion(true)
+                    }
+                }else{
+                    //Failure
+                    print("Session Failed : \(error!.localizedDescription)")
+                    completion(false)
+                }
+            })
+            
+            task.resume()
+            session.finishTasksAndInvalidate()
+            
+        }catch let err{
+            print(err)
+            completion(false)
+        }
+        
+    }
+
     
 }
