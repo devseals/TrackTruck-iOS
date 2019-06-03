@@ -15,6 +15,9 @@ class LogInVC: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
+    @IBOutlet weak var usernameTextField2: UITextField!
+    @IBOutlet weak var passwordTextField2: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +28,7 @@ class LogInVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func loginButtonTapped(sender: UIButton){
+    @IBAction func registerButtonTapped(sender: UIButton){
         guard let name = nameTextField.text, nameTextField.text != "",
               let pass = passwordTextField.text, passwordTextField.text != "",
               let user = usernameTextField.text, usernameTextField.text != "",
@@ -50,6 +53,25 @@ class LogInVC: UIViewController {
                 }
             }
         })
+    }
+    
+    @IBAction func loginButtonTapped(sender: UIButton){
+        guard let pass = passwordTextField2.text, passwordTextField2.text != "",
+            let user = usernameTextField2.text, usernameTextField2.text != "" else{
+                self.showAlert(with: "Error", message: "Complete los campos")
+                return
+        }
+        
+        AuthService.instance.logInUser(username: user, password: pass, completion: {Success in
+                    if Success{
+                        self.dismiss(animated: true, completion: nil)
+                    }else{
+                        OperationQueue.main.addOperation {
+                            self.showAlert(with: "Error", message: "Contrasena Incorrecta")
+                        }
+                    }
+                })
+
     }
     
     func showAlert(with title: String?, message: String?){

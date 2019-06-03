@@ -35,6 +35,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rj-N2-ncZ">
                                         <rect key="frame" x="303" y="8" width="64" height="49"/>
                                         <state key="normal" image="Login"/>
+                                        <connections>
+                                            <action selector="loginButtonTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="40g-JE-H7b"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.72194193844090537" blue="0.18053905897532441" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

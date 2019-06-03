@@ -11,8 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addButton: UIImageView!
-    
+
     var dataService = DataService.instance
     var authService = AuthService.instance
     
@@ -30,14 +29,14 @@ class MainViewController: UIViewController {
     }
     
     func showLogInVC(){
-        logInVC = LogInVC()
-        logInVC?.modalPresentationStyle = UIModalPresentationStyle.formSheet
+       logInVC = LogInVC()
+       logInVC?.modalPresentationStyle = UIModalPresentationStyle.formSheet
         self.present(logInVC!,animated: true, completion: nil)
     }
     
     @IBAction func loginButtonTapped(sender: UIButton){
         if AuthService.instance.isAuthenticated == true {
-            performSegue(withIdentifier: "", sender: self)
+            performSegue(withIdentifier: "showAddTruckVC", sender: self)
         }else{
             showLogInVC()
         }
