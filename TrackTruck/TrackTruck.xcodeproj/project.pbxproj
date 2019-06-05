@@ -19,9 +19,11 @@
 		B53B1A1722A1E6D50085D47F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53B1A1622A1E6D50085D47F /* Constants.swift */; };
 		B56C816A22A0A2280010E9D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B56C816922A0A2280010E9D1 /* Default-568h@2x.png */; };
 		B5A05AE022A36FBE00E97685 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A05ADF22A36FBE00E97685 /* AuthService.swift */; };
+		B5CB9D1E22A83BB1002C0A91 /* AddTruckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB9D1D22A83BB1002C0A91 /* AddTruckViewController.swift */; };
 		B5D39AD222A5BE13006328BE /* FoodtruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D39AD122A5BE13006328BE /* FoodtruckCell.swift */; };
 		B5D39AD522A5C562006328BE /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D39AD322A5C562006328BE /* LogInVC.swift */; };
 		B5D39AD622A5C562006328BE /* LogInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D39AD422A5C562006328BE /* LogInVC.xib */; };
+		B5EB784522A8615B004A60C4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB784422A8615B004A60C4 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +41,11 @@
 		B53B1A1622A1E6D50085D47F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B56C816922A0A2280010E9D1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B5A05ADF22A36FBE00E97685 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		B5CB9D1D22A83BB1002C0A91 /* AddTruckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTruckViewController.swift; sourceTree = "<group>"; };
 		B5D39AD122A5BE13006328BE /* FoodtruckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodtruckCell.swift; sourceTree = "<group>"; };
 		B5D39AD322A5C562006328BE /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		B5D39AD422A5C562006328BE /* LogInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInVC.xib; sourceTree = "<group>"; };
+		B5EB784422A8615B004A60C4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				B50E300B229EE07000B4B657 /* AppDelegate.swift */,
 				B50E3022229EE1FA00B4B657 /* MainViewController.swift */,
 				B5D39AD322A5C562006328BE /* LogInVC.swift */,
+				B5CB9D1D22A83BB1002C0A91 /* AddTruckViewController.swift */,
+				B5EB784422A8615B004A60C4 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -210,11 +216,13 @@
 				B50E3025229EE45100B4B657 /* Foodtruck.swift in Sources */,
 				B50E3029229EF48A00B4B657 /* Review.swift in Sources */,
 				B50E300C229EE07000B4B657 /* AppDelegate.swift in Sources */,
+				B5EB784522A8615B004A60C4 /* DetailViewController.swift in Sources */,
 				B5D39AD222A5BE13006328BE /* FoodtruckCell.swift in Sources */,
 				B53B1A1522A1E51A0085D47F /* DataService.swift in Sources */,
 				B53B1A1722A1E6D50085D47F /* Constants.swift in Sources */,
 				B50E302B229EFACA00B4B657 /* Sale.swift in Sources */,
 				B50E3023229EE1FA00B4B657 /* MainViewController.swift in Sources */,
+				B5CB9D1E22A83BB1002C0A91 /* AddTruckViewController.swift in Sources */,
 				B5D39AD522A5C562006328BE /* LogInVC.swift in Sources */,
 				B5A05AE022A36FBE00E97685 /* AuthService.swift in Sources */,
 			);

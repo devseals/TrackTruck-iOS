@@ -43,6 +43,15 @@ class MainViewController: UIViewController {
             showLogInVC()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailVC"{
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let destinationViewController = segue.destination as! DetailViewController
+                destinationViewController.selectedFoodTruck = DataService.instance.foodtrucks[indexPath.row]
+            }
+        }
+    }
 
 }
 

@@ -31,5 +31,7 @@ let REGISTER_SALE = "\(BASE_URL)sales"
 let DEFAULTS_REGISTERED="isRegistered"
 let DEFAULTS_AUTHENTICATED="isAuthenticated"
 
-let DEFAULTS_USERNAME="username"
+let DEFAULTS_USERID="userid"
+let DEFAULTS_OWNERID="ownerid"
+let DEFAULTS_EMPLOYEEID="employeeid"
 let DEFAULTS_TOKEN="authToken"

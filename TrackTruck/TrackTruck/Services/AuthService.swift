@@ -31,12 +31,30 @@ class AuthService{
         }
     }
     
-    var username: String?{
+    var userId: Int?{
         get{
-            return defaults.value(forKey: DEFAULTS_USERNAME) as? String
+            return defaults.value(forKey: DEFAULTS_USERID) as? Int
         }
         set{
-            defaults.value(forKey: DEFAULTS_USERNAME)
+            defaults.value(forKey: DEFAULTS_USERID)
+        }
+    }
+   
+    var ownerId: Int?{
+        get{
+            return defaults.value(forKey: DEFAULTS_OWNERID) as? Int
+        }
+        set{
+            defaults.value(forKey: DEFAULTS_OWNERID)
+        }
+    }
+    
+    var employeeId: Int?{
+        get{
+            return defaults.value(forKey: DEFAULTS_EMPLOYEEID) as? Int
+        }
+        set{
+            defaults.value(forKey: DEFAULTS_EMPLOYEEID)
         }
     }
     
@@ -257,12 +275,14 @@ class AuthService{
                             return
                         }
                         do{
-                            let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Dictionary<String, AnyObject>
+                            let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+                            
+                            let user = result?["User"] as! [String: Any]
                             if result != nil{
-                                if let username = result?["username"] as? String{
+                                if let userid = user["user_id"] as? Int{
                                     if let token = result?["token"] as? String{
                                         //LOGED IN SUCCESSFULY
-                                        self.username = username
+                                        self.userId = userid
                                         self.authToken = token
                                         self.isRegistered = true
                                         self.isAuthenticated = true
@@ -337,12 +357,15 @@ class AuthService{
                             return
                         }
                         do{
-                            let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Dictionary<String, AnyObject>
+                            let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+                            
+                            let owner = result?["Owner"] as! [String: Any]
+                            
                             if result != nil{
-                                if let username = result?["username"] as? String{
+                                if let ownerid = owner["owner_id"] as? Int{
                                     if let token = result?["token"] as? String{
                                         //LOGED IN SUCCESSFULY
-                                        self.username = username
+                                        self.ownerId = ownerid
                                         self.authToken = token
                                         self.isRegistered = true
                                         self.isAuthenticated = true
@@ -417,12 +440,15 @@ class AuthService{
                             return
                         }
                         do{
-                            let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Dictionary<String, AnyObject>
+                            let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+                            
+                            let employee = result?["Employee"] as! [String: Any]
+                            
                             if result != nil{
-                                if let username = result?["username"] as? String{
+                                if let employeeid = employee["employee_id"] as? Int{
                                     if let token = result?["token"] as? String{
                                         //LOGED IN SUCCESSFULY
-                                        self.username = username
+                                        self.employeeId = employeeid
                                         self.authToken = token
                                         self.isRegistered = true
                                         self.isAuthenticated = true
