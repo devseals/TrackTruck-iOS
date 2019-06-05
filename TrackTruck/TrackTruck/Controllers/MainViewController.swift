@@ -24,6 +24,8 @@ class MainViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44
         
         DataService.instance.getFoodtrucks()
     }
@@ -66,7 +68,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         return dataService.foodtrucks.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "FoodtruckCell", for: indexPath) as? FoodtruckCell{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "FoodtruckCell", for: indexPath) as? FoodtruckCell {
             cell.configureCell(truck: dataService.foodtrucks[indexPath.row])
             return cell
         }else{
