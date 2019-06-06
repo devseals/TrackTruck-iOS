@@ -41,5 +41,22 @@ class DetailViewController: UIViewController {
             _ = self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    @IBAction func reviewsButtonTapped(sender: UIButton){
+        performSegue(withIdentifier: "showReviewsVC", sender: self)
+    }
+    
+    @IBAction func addButtonTapped(sender: UIButton){
+        performSegue(withIdentifier: "addRevieVC", sender: self)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showReviewsVC"{
+                let destinationViewController = segue.destination as! ReviewsViewController
+                destinationViewController.selectedFoodTruck = selectedFoodTruck
+        }else if segue.identifier == "addReviewVC"{
+            let destinationViewController = segue.destination as! AddReviewViewController
+            destinationViewController.selectedFoodTruck = selectedFoodTruck        }
+    }
+    
 }

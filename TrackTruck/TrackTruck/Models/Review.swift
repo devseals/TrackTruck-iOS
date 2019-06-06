@@ -25,18 +25,25 @@ struct Review {
            let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
 
            //parse JSON
-            if let reviewList = jsonResult as? [String: Any]{
-              let reviews = reviewList["Reviews"] as! [[String: Any]]
+            
+            
+            if let allList = jsonResult as? [String: Any]{
+                
+             let foodtrucks = allList["Foodtrucks"] as! [String: Any]
+                
+              let reviews = foodtrucks["Reviews"] as! [[String: Any]]
                 for review in reviews{
                     var newReview = Review()
                     
                     newReview.content = review["content"] as! String
-                    newReview.date = review["date"] as! String
+                    //cut the date
+                    let sampleDate = review["date"] as! String
+                    let indexEndOfText = sampleDate.index(sampleDate.endIndex, offsetBy: -9)
+                    newReview.date = String(sampleDate[..<indexEndOfText])
+                    
                     newReview.title = review["title"] as! String
                     newReview.review_id = review["review_id"] as! Int
-
-                    let foodtruck = review["foodtrucks"] as! [String: Any]
-                    newReview.foodtruck_id = foodtruck["foodtruck_id"] as! Int
+                    newReview.foodtruck_id = review["foodtruck_id"] as! Int
 
                     let user = review["users"] as! [String: Any]
                     newReview.user_id = user["user_id"] as! Int

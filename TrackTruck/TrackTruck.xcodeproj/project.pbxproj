@@ -24,6 +24,9 @@
 		B5D39AD522A5C562006328BE /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D39AD322A5C562006328BE /* LogInVC.swift */; };
 		B5D39AD622A5C562006328BE /* LogInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D39AD422A5C562006328BE /* LogInVC.xib */; };
 		B5EB784522A8615B004A60C4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB784422A8615B004A60C4 /* DetailViewController.swift */; };
+		B5EE3FF622A8696A00B004DD /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE3FF522A8696A00B004DD /* ReviewsViewController.swift */; };
+		B5EE3FF822A86A9D00B004DD /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE3FF722A86A9D00B004DD /* AddReviewViewController.swift */; };
+		B5EE3FFA22A86C1D00B004DD /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE3FF922A86C1D00B004DD /* ReviewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		B5D39AD322A5C562006328BE /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		B5D39AD422A5C562006328BE /* LogInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInVC.xib; sourceTree = "<group>"; };
 		B5EB784422A8615B004A60C4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B5EE3FF522A8696A00B004DD /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
+		B5EE3FF722A86A9D00B004DD /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
+		B5EE3FF922A86C1D00B004DD /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,7 @@
 				B50E3014229EE07300B4B657 /* LaunchScreen.storyboard */,
 				B5D39AD422A5C562006328BE /* LogInVC.xib */,
 				B5D39AD122A5BE13006328BE /* FoodtruckCell.swift */,
+				B5EE3FF922A86C1D00B004DD /* ReviewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,6 +133,8 @@
 				B5D39AD322A5C562006328BE /* LogInVC.swift */,
 				B5CB9D1D22A83BB1002C0A91 /* AddTruckViewController.swift */,
 				B5EB784422A8615B004A60C4 /* DetailViewController.swift */,
+				B5EE3FF522A8696A00B004DD /* ReviewsViewController.swift */,
+				B5EE3FF722A86A9D00B004DD /* AddReviewViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -214,13 +223,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50E3025229EE45100B4B657 /* Foodtruck.swift in Sources */,
+				B5EE3FFA22A86C1D00B004DD /* ReviewCell.swift in Sources */,
 				B50E3029229EF48A00B4B657 /* Review.swift in Sources */,
 				B50E300C229EE07000B4B657 /* AppDelegate.swift in Sources */,
 				B5EB784522A8615B004A60C4 /* DetailViewController.swift in Sources */,
 				B5D39AD222A5BE13006328BE /* FoodtruckCell.swift in Sources */,
 				B53B1A1522A1E51A0085D47F /* DataService.swift in Sources */,
+				B5EE3FF822A86A9D00B004DD /* AddReviewViewController.swift in Sources */,
 				B53B1A1722A1E6D50085D47F /* Constants.swift in Sources */,
 				B50E302B229EFACA00B4B657 /* Sale.swift in Sources */,
+				B5EE3FF622A8696A00B004DD /* ReviewsViewController.swift in Sources */,
 				B50E3023229EE1FA00B4B657 /* MainViewController.swift in Sources */,
 				B5CB9D1E22A83BB1002C0A91 /* AddTruckViewController.swift in Sources */,
 				B5D39AD522A5C562006328BE /* LogInVC.swift in Sources */,
