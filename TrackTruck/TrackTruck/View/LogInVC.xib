@@ -14,8 +14,10 @@
             <connections>
                 <outlet property="nameTextField" destination="Qb4-ZM-L5H" id="QcR-3a-dEe"/>
                 <outlet property="passwordTextField" destination="oD2-im-T3Y" id="4fU-Yf-ygb"/>
+                <outlet property="passwordTextField2" destination="erd-x5-wJC" id="fcp-sI-dDL"/>
                 <outlet property="phoneTextField" destination="eac-MI-8pL" id="5HQ-5o-zSI"/>
                 <outlet property="usernameTextField" destination="RZz-dI-fDn" id="dQ0-pM-nlT"/>
+                <outlet property="usernameTextField2" destination="eOU-gb-ebO" id="1Hq-uh-CCt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

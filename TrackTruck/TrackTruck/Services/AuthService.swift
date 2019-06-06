@@ -238,7 +238,7 @@ class AuthService{
     
     
     func logInUser(username: String, password : String, completion : @escaping callback){
-        let json = [
+        let json: [String: Any] = [
             "username": username,
             "password": password]
         
@@ -255,9 +255,10 @@ class AuthService{
         var request = URLRequest(url: URL)
         
         request.httpMethod="POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do{
-            request.httpBody = try JSONSerialization.data(withJSONObject: json, options: [])
+            request.httpBody = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
             
             let task = session.dataTask(with: request, completionHandler:  { (data: Data?, response: URLResponse?, error: Error?) -> Void in
                 if(error == nil){
@@ -285,6 +286,8 @@ class AuthService{
                                         self.userId = userid
                                         self.authToken = token
                                         self.isRegistered = true
+                                        self.employeeId = nil
+                                        self.ownerId = nil
                                         self.isAuthenticated = true
                                         completion(true)
                                     }else{
@@ -368,6 +371,8 @@ class AuthService{
                                         self.ownerId = ownerid
                                         self.authToken = token
                                         self.isRegistered = true
+                                        self.employeeId = nil
+                                        self.userId = nil
                                         self.isAuthenticated = true
                                         completion(true)
                                     }else{
@@ -452,6 +457,8 @@ class AuthService{
                                         self.authToken = token
                                         self.isRegistered = true
                                         self.isAuthenticated = true
+                                        self.ownerId = nil
+                                        self.userId = nil
                                         completion(true)
                                     }else{
                                         completion(false)

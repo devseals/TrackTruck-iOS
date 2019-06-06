@@ -47,7 +47,18 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func addButtonTapped(sender: UIButton){
-        performSegue(withIdentifier: "addRevieVC", sender: self)
+        if AuthService.instance.isAuthenticated == true && AuthService.instance.userId != nil{
+            performSegue(withIdentifier: "addReviewVC", sender: self)
+        }else{
+            showLogInVC()
+        }
+        
+    }
+    
+    func showLogInVC(){
+        logInVC = LogInVC()
+        logInVC?.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        self.present(logInVC!,animated: true, completion: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

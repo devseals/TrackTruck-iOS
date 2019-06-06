@@ -47,6 +47,7 @@ class AddTruckViewController: UIViewController {
             
             if Success{
                 print("FT GUARDADO")
+                DataService.instance.getFoodtrucks()
                 OperationQueue.main.addOperation {
                     _ = self.navigationController?.popViewController(animated: true)
                 }

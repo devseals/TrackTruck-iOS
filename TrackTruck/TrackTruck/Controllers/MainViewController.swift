@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
         self.present(logInVC!,animated: true, completion: nil)
     }
     
+    //AQUI TIENES PENDIENTES KENZO
     @IBAction func loginButtonTapped(sender: UIButton){
         if AuthService.instance.isAuthenticated == true {
             performSegue(withIdentifier: "showAddTruckVC", sender: self)
