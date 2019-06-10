@@ -273,15 +273,17 @@ class AuthService{
                     }else{
                         guard let data = data else{
                             completion(false)
+                            print("0")
                             return
                         }
                         do{
                             let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
-                            
+                            print("1")
                             let user = result?["User"] as! [String: Any]
                             if result != nil{
                                 if let userid = user["user_id"] as? Int{
-                                    if let token = result?["token"] as? String{
+                                    print("2")
+                                    if let token = result?["Token"] as? String{
                                         //LOGED IN SUCCESSFULY
                                         self.userId = userid
                                         self.authToken = token
