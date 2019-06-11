@@ -163,7 +163,7 @@ class DataService {
                     //success
                     let statusCode = (response as! HTTPURLResponse).statusCode
                     print("URL SESSION SUCCEDED : HTTP:\(statusCode)")
-                    if statusCode != 200{
+                    if statusCode != 201{
                         completion(false)
                         return
                     }else{
@@ -298,7 +298,7 @@ class DataService {
                     //success
                     let statusCode = (response as! HTTPURLResponse).statusCode
                     print("URL SESSION SUCCEDED : HTTP:\(statusCode)")
-                    if statusCode != 200{
+                    if statusCode != 201{
                         completion(false)
                         return
                     }else{
