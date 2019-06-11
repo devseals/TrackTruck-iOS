@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var foodType: UILabel!
     @IBOutlet weak var avgCost: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -26,6 +27,7 @@ class DetailViewController: UIViewController {
         nameLabel.text = selectedFoodTruck?.name
         foodType.text = selectedFoodTruck?.food_type
         avgCost.text = "$ \(selectedFoodTruck!.avg_price)"
+        phoneLabel.text = selectedFoodTruck?.phone
         
         mapView.addAnnotation(selectedFoodTruck!)
         centerMap(CLLocation(latitude: selectedFoodTruck!.latitude, longitude: selectedFoodTruck!.longitude))
