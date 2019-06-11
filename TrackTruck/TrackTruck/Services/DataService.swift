@@ -221,18 +221,16 @@ class DataService {
                 completion(false)
                 return
             }
-            
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
-            request.httpBody = jsonData
-            
+            request.httpBody = jsonData 
             let task = session.dataTask(with: request, completionHandler:  { (data: Data?, response: URLResponse?, error: Error?) -> Void in
                 if(error == nil){
                     //success
                     let statusCode = (response as! HTTPURLResponse).statusCode
                     print("URL SESSION SUCCEDED : HTTP:\(statusCode)")
-                    if statusCode != 200{
+                    if statusCode != 201{
                         completion(false)
                         return
                     }else{
@@ -247,7 +245,6 @@ class DataService {
             
             task.resume()
             session.finishTasksAndInvalidate()
-            
         }catch let err{
             print(err)
             completion(false)

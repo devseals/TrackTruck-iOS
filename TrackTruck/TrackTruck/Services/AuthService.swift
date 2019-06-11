@@ -13,60 +13,17 @@ class AuthService{
     
     let defaults = UserDefaults.standard
     
-    var isRegistered: Bool? {
-        get{
-            return defaults.bool(forKey: DEFAULTS_REGISTERED) == true
-        }
-        set{
-            defaults.set(newValue, forKey: DEFAULTS_REGISTERED)
-        }
-    }
+    var isRegistered: Bool?
     
-    var isAuthenticated: Bool? {
-        get{
-            return defaults.bool(forKey: DEFAULTS_AUTHENTICATED) == true
-        }
-        set{
-            defaults.set(newValue, forKey: DEFAULTS_AUTHENTICATED)
-        }
-    }
+    var isAuthenticated: Bool?
     
-    var userId: Int?{
-        get{
-            return defaults.value(forKey: DEFAULTS_USERID) as? Int
-        }
-        set{
-            defaults.value(forKey: DEFAULTS_USERID)
-        }
-    }
-   
-    var ownerId: Int?{
-        get{
-            return defaults.value(forKey: DEFAULTS_OWNERID) as? Int
-        }
-        set{
-            defaults.value(forKey: DEFAULTS_OWNERID)
-        }
-    }
+    var userId: Int?
     
-    var employeeId: Int?{
-        get{
-            return defaults.value(forKey: DEFAULTS_EMPLOYEEID) as? Int
-        }
-        set{
-            defaults.value(forKey: DEFAULTS_EMPLOYEEID)
-        }
-    }
+    var ownerId: Int?
     
-    var authToken: String?{
-        get{
-            return defaults.value(forKey: DEFAULTS_TOKEN) as? String
-        }
-        set{
-            defaults.value(forKey: DEFAULTS_TOKEN)
-        }
-    }
+    var employeeId: Int?
     
+    var authToken: String?
     
     func registerUser(username: String, password: String, name: String, phone:String, completion: @escaping callback){
         
@@ -273,7 +230,6 @@ class AuthService{
                     }else{
                         guard let data = data else{
                             completion(false)
-                            print("0")
                             return
                         }
                         do{
@@ -286,6 +242,7 @@ class AuthService{
                                     if let token = result?["Token"] as? String{
                                         //LOGED IN SUCCESSFULY
                                         self.userId = userid
+                                        print(token)
                                         self.authToken = token
                                         self.isRegistered = true
                                         self.employeeId = nil
