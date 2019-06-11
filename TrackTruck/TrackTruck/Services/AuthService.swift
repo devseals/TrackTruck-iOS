@@ -325,7 +325,7 @@ class AuthService{
                             
                             if result != nil{
                                 if let ownerid = owner["owner_id"] as? Int{
-                                    if let token = result?["token"] as? String{
+                                    if let token = result?["Token"] as? String{
                                         //LOGED IN SUCCESSFULY
                                         self.ownerId = ownerid
                                         self.authToken = token
@@ -410,7 +410,7 @@ class AuthService{
                             
                             if result != nil{
                                 if let employeeid = employee["employee_id"] as? Int{
-                                    if let token = result?["token"] as? String{
+                                    if let token = result?["Token"] as? String{
                                         //LOGED IN SUCCESSFULY
                                         self.employeeId = employeeid
                                         self.authToken = token

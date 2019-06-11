@@ -48,6 +48,12 @@ class DetailViewController: UIViewController {
         performSegue(withIdentifier: "showReviewsVC", sender: self)
     }
     
+    @IBAction func llamarButtonTapped(sender: UIButton){
+        guard let textphoneLabel = phoneLabel.text else {return}
+        guard let number = URL(string: "tel://" + textphoneLabel) else { return }
+        UIApplication.shared.open(number)
+    }
+    
     @IBAction func addButtonTapped(sender: UIButton){
         if AuthService.instance.isAuthenticated == true && AuthService.instance.userId != nil{
             performSegue(withIdentifier: "addReviewVC", sender: self)
