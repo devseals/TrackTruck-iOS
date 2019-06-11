@@ -17,6 +17,9 @@ class LoginVC2: UIViewController {
     
     @IBOutlet weak var usernameTextField2: UITextField!
     @IBOutlet weak var passwordTextField2: UITextField!
+    
+    @IBOutlet weak var usernameTextField3: UITextField!
+    @IBOutlet weak var passwordTextField3: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +35,9 @@ class LoginVC2: UIViewController {
     }
     
     @IBAction func cancelButtonTapped(sender: UIButton){
-        self.dismiss(animated: true, completion: nil)
+        OperationQueue.main.addOperation {
+            _ = self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func registerButtonTapped(sender: UIButton){
@@ -45,7 +50,7 @@ class LoginVC2: UIViewController {
         }
         AuthService.instance.registerOwner(username: user, password: pass, name: name, ruc: ruc, completion: {Success in
             if Success {
-                AuthService.instance.logInUser(username: user, password: pass, completion: {Success in
+                AuthService.instance.logInOwner(username: user, password: pass, completion: {Success in
                     if Success{
                         self.dismiss(animated: true, completion: nil)
                     }else{
@@ -71,9 +76,32 @@ class LoginVC2: UIViewController {
         
         AuthService.instance.logInOwner(username: user, password: pass, completion: {Success in
             if Success{
+                //REDIRECCIONAR A MAIN OWNER
                 self.dismiss(animated: true, completion: nil)
             }else{
                 OperationQueue.main.addOperation {
+                    
+                    self.showAlert(with: "Error", message: "Contrasena Incorrecta")
+                }
+            }
+        })
+        
+    }
+    
+    @IBAction func login2ButtonTapped(sender: UIButton){
+        guard let pass = passwordTextField3.text, passwordTextField3.text != "",
+            let user = usernameTextField3.text, usernameTextField3.text != "" else{
+                self.showAlert(with: "Error", message: "Complete los campos")
+                return
+        }
+        
+        AuthService.instance.logInEmployee(username: user, password: pass, completion: {Success in
+            if Success{
+                //REDIRECCIONAR A MAIN PARA EMPLOYEES
+                self.dismiss(animated: true, completion: nil)
+            }else{
+                OperationQueue.main.addOperation {
+                    
                     self.showAlert(with: "Error", message: "Contrasena Incorrecta")
                 }
             }

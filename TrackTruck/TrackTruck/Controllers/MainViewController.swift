@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     var authService = AuthService.instance
     
     var logInVC: LogInVC?
+    var logInVC2: LoginVC2?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +35,6 @@ class MainViewController: UIViewController {
        logInVC = LogInVC()
        logInVC?.modalPresentationStyle = UIModalPresentationStyle.formSheet
         self.present(logInVC!,animated: true, completion: nil)
-    }
-    
-    //AQUI TIENES PENDIENTES KENZO
-    @IBAction func loginButtonTapped(sender: UIButton){
-        if AuthService.instance.isAuthenticated == true {
-            performSegue(withIdentifier: "showAddTruckVC", sender: self)
-        }else{
-            showLogInVC()
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
