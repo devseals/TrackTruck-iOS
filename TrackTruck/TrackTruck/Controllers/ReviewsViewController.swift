@@ -36,6 +36,9 @@ class ReviewsViewController: UIViewController {
         OperationQueue.main.addOperation {
             _ = self.navigationController?.popViewController(animated: true)
         }
+        OperationQueue.main.addOperation {
+            _ = self.navigationController?.popViewController(animated: true)
+        }
     }
 
     
