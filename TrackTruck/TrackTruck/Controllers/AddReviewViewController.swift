@@ -29,7 +29,12 @@ class AddReviewViewController: UIViewController {
                 self.showAlert(with: "ERROR", message: "COMPLETA LOS CAMPOS")
                 return
         }
-        DataService.instance.createReview(foodTruckId: selectedFoodTruck!.id, content: content, title: title, userId: AuthService.instance.userId!, completion: {
+        DataService.instance.createReview(
+            foodTruckId: selectedFoodTruck!.id,
+            content: content,
+            title: title,
+            userId: AuthService.instance.userId!,
+            completion: {
             Success in
             if Success{
                 print("Saved REVIEW")

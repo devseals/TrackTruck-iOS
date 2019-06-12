@@ -299,6 +299,7 @@ class AuthService{
         var request = URLRequest(url: URL)
         
         request.httpMethod="POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do{
             request.httpBody = try JSONSerialization.data(withJSONObject: json, options: [])
@@ -384,6 +385,7 @@ class AuthService{
         var request = URLRequest(url: URL)
         
         request.httpMethod="POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do{
             request.httpBody = try JSONSerialization.data(withJSONObject: json, options: [])

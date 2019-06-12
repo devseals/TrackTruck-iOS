@@ -23,7 +23,6 @@ class LoginVC2: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
        
     }
 
@@ -97,8 +96,9 @@ class LoginVC2: UIViewController {
         
         AuthService.instance.logInEmployee(username: user, password: pass, completion: {Success in
             if Success{
-                //REDIRECCIONAR A MAIN PARA EMPLOYEES
-                self.dismiss(animated: true, completion: nil)
+                //REDIRECCIONAR A MAIN PARA EMPLOYEE
+                
+        
             }else{
                 OperationQueue.main.addOperation {
                     
