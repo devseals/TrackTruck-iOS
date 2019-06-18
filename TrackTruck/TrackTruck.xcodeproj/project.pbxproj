@@ -11,6 +11,7 @@
 		51FC79EC22B4384E00A69E3B /* OwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC79EB22B4384E00A69E3B /* OwnerViewController.swift */; };
 		51FC79EE22B43D4900A69E3B /* SalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC79ED22B43D4900A69E3B /* SalesViewController.swift */; };
 		51FC79F022B43E6300A69E3B /* SaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC79EF22B43E6300A69E3B /* SaleCell.swift */; };
+		7D93F1B022B8758700A604D6 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D93F1AF22B8758700A604D6 /* AddEmployeeViewController.swift */; };
 		B50E300C229EE07000B4B657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E300B229EE07000B4B657 /* AppDelegate.swift */; };
 		B50E3011229EE07000B4B657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50E300F229EE07000B4B657 /* Main.storyboard */; };
 		B50E3013229EE07300B4B657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50E3012229EE07300B4B657 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		51FC79EB22B4384E00A69E3B /* OwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerViewController.swift; sourceTree = "<group>"; };
 		51FC79ED22B43D4900A69E3B /* SalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesViewController.swift; sourceTree = "<group>"; };
 		51FC79EF22B43E6300A69E3B /* SaleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleCell.swift; sourceTree = "<group>"; };
+		7D93F1AF22B8758700A604D6 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
 		B50E3008229EE07000B4B657 /* TrackTruck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackTruck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50E300B229EE07000B4B657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B50E3010229EE07000B4B657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				51F6164822B171F8007B130C /* AddSaleViewController.swift */,
 				51FC79EB22B4384E00A69E3B /* OwnerViewController.swift */,
 				51FC79ED22B43D4900A69E3B /* SalesViewController.swift */,
+				7D93F1AF22B8758700A604D6 /* AddEmployeeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				B5EE3FF622A8696A00B004DD /* ReviewsViewController.swift in Sources */,
 				51FC79EC22B4384E00A69E3B /* OwnerViewController.swift in Sources */,
 				B50E3023229EE1FA00B4B657 /* MainViewController.swift in Sources */,
+				7D93F1B022B8758700A604D6 /* AddEmployeeViewController.swift in Sources */,
 				B5CB9D1E22A83BB1002C0A91 /* AddTruckViewController.swift in Sources */,
 				B5E69C6822A8B1F900225FBF /* LoginVC2.swift in Sources */,
 				B5D39AD522A5C562006328BE /* LogInVC.swift in Sources */,

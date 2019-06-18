@@ -31,29 +31,37 @@ class AddTruckViewController: UIViewController {
     
     @IBAction func addButton(sender: UIButton){
         guard   let name = nameField.text, nameField.text != "",
-                let cost = Double(nameField.text!), nameField.text != "",
-                let type = nameField.text, nameField.text != "",
-                let lat = Double(nameField.text!), nameField.text != "",
-                let lon = Double(nameField.text!), nameField.text != "",
-                let phone = nameField.text, nameField.text != "" else{
+                let cost = Double(avg_costFieldField.text!), avg_costFieldField.text != "",
+                let type = food_typeField.text, food_typeField.text != "",
+                let lat = Double(latitudeField.text!), latitudeField.text != "",
+                let lon = Double(longitudeField.text!), longitudeField.text != "",
+                let phone = phoneField.text, phoneField.text != "" else{
             self.showAlert(with: "Error", message: "Complete los campos")
             return
         }
         
         //AQUI FALTA VER COMO JALAR EL OWNER ID
         
-        DataService.instance.createFoodtruck(name: name, food_type: type, avg_price: cost, latitude: lat, longitude: lon, phone: phone, owner_id: AuthService.instance.ownerId!, completion: {
-            Success in
-            
-            if Success{
-                print("FT GUARDADO")
-                DataService.instance.getFoodtrucks()
-                OperationQueue.main.addOperation {
-                    _ = self.navigationController?.popViewController(animated: true)
+        DataService.instance.createFoodtruck(
+            name: name,
+            food_type: type,
+            avg_price: cost,
+            latitude: lat,
+            longitude: lon,
+            phone: phone,
+            owner_id: AuthService.instance.ownerId!,
+            completion: {
+                Success in
+                
+                if Success{
+                    print("FT GUARDADO")
+                    DataService.instance.getFoodtrucks()
+                    OperationQueue.main.addOperation {
+                        _ = self.navigationController?.popViewController(animated: true)
+                    }
+                }else{
+                    self.showAlert(with: "Error:", message: "Algo salio mal")
                 }
-            }else{
-                self.showAlert(with: "Error:", message: "Algo salio mal")
-            }
         })
     }
     

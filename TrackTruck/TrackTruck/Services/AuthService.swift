@@ -142,23 +142,29 @@ class AuthService{
     
     func registerEmployee(username: String, password: String, name: String, owner_id :Int, completion: @escaping callback){
         
-        let json = [
+        let json: [String:Any] = [
             "name": name,
             "password": password,
             "username": username,
-            "owner_id": owner_id] as [String : Any]
+            "owner_id": owner_id
+        ]
         
         let sessionConfig = URLSessionConfiguration.default
         
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         
-        guard let URL = URL(string: REGISTER_OWNER) else{
+        guard let URL = URL(string: REGISTER_EMPLOYEE) else{
             completion(false)
             return
         }
         
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
+        guard let token = AuthService.instance.authToken else{
+            completion(false)
+            return
+        }
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do{
