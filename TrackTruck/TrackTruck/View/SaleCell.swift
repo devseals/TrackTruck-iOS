@@ -23,7 +23,7 @@ class SaleCell: UITableViewCell {
         registerLabel.text = sale.employeeName
         dateLabel.text = sale.date
         contentLabel.text = sale.content
-        amountLabel.text = String(sale.value)
+        amountLabel.text = "$\(sale.value)"
     }
 
 }

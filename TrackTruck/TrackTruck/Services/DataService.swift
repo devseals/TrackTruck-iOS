@@ -66,6 +66,12 @@ class DataService {
         guard let URL = URL(string: GET_OWNER_SALES) else { return }
         var request = URLRequest(url:  URL)
         request.httpMethod = "GET"
+        guard let token = AuthService.instance.authToken else{
+            return
+        }
+        
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             if(error==nil){

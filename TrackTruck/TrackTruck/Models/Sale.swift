@@ -31,8 +31,9 @@ struct Sale{
 
                     let employee = sale["employees"] as! [String: Any]
                     newSale.employeeName = employee["name"] as! String
-
+                    
                     allSales.append(newSale)
+        
                 }
             }
         }catch let err{
