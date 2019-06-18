@@ -32,7 +32,12 @@ struct Sale{
                     let employee = sale["employees"] as! [String: Any]
                     newSale.employeeName = employee["name"] as! String
                     
+                    let owner = employee["owners"] as! [String: Any]
+                    let thisId = owner["owner_id"] as! Int
+                    
+                    if(thisId == AuthService.instance.ownerId){
                     allSales.append(newSale)
+                    }
         
                 }
             }
