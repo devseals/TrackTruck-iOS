@@ -23,14 +23,13 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        nameLabel.text = selectedFoodTruck?.name
         foodType.text = selectedFoodTruck?.food_type
         avgCost.text = "$ \(selectedFoodTruck!.avg_price)"
         phoneLabel.text = selectedFoodTruck?.phone
         
         mapView.addAnnotation(selectedFoodTruck!)
         centerMap(CLLocation(latitude: selectedFoodTruck!.latitude, longitude: selectedFoodTruck!.longitude))
+        self.navigationItem.title=selectedFoodTruck?.name
     }
     
     func centerMap( _ location: CLLocation){

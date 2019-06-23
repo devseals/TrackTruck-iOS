@@ -26,7 +26,6 @@ class ReviewsViewController: UIViewController {
         DataService.instance.delegate = self
         
         if let truck = selectedFoodTruck{
-            nameLabel.text = truck.name
             DataService.instance.getReviews(for: truck)
         }
         
