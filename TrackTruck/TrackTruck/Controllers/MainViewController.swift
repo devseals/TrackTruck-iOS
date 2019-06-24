@@ -26,8 +26,8 @@ class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 44
-        
+        tableView.estimatedRowHeight = 40
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: nil, action: nil)
         DataService.instance.getFoodtrucks()
     }
     
@@ -42,6 +42,7 @@ class MainViewController: UIViewController {
             if let indexPath = tableView.indexPathForSelectedRow{
                 let destinationViewController = segue.destination as! DetailViewController
                 destinationViewController.selectedFoodTruck = DataService.instance.foodtrucks[indexPath.row]
+                tableView.deselectRow(at: indexPath, animated: true)
             }
         }
     }
