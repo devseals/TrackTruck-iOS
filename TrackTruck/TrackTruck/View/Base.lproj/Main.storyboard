@@ -200,7 +200,6 @@
                         <constraints>
                             <constraint firstItem="BhN-Pb-UPd" firstAttribute="leading" secondItem="6bM-4r-sM4" secondAttribute="leading" id="3Zc-Vf-zRs"/>
                             <constraint firstItem="BhN-Pb-UPd" firstAttribute="baseline" secondItem="qXL-yy-uHI" secondAttribute="baseline" id="6ht-zp-vah"/>
-                            <constraint firstItem="dhK-dH-loH" firstAttribute="top" secondItem="Pnj-o9-0WB" secondAttribute="top" constant="8" id="7xp-aQ-exW"/>
                             <constraint firstItem="s1E-kH-6Gz" firstAttribute="top" secondItem="Pnj-o9-0WB" secondAttribute="top" constant="8" id="AyS-04-oC3"/>
                             <constraint firstItem="1nS-df-cFg" firstAttribute="trailing" secondItem="6bM-4r-sM4" secondAttribute="trailing" id="Cln-Rd-XPO"/>
                             <constraint firstItem="dhK-dH-loH" firstAttribute="leading" secondItem="O0c-R2-aBB" secondAttribute="leading" id="FeM-UV-Qem"/>
@@ -392,7 +391,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAc-LS-xdQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAc-LS-xdQ">
                                                     <rect key="frame" x="231" y="8" width="120" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="KmX-xK-fUC"/>
@@ -467,7 +466,7 @@
         <!--TrackTruck-->
         <scene sceneID="e7v-xP-8IG">
             <objects>
-                <viewController id="6BS-Yc-8iG" customClass="OwnerViewController" customModule="TrackTruck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="owner" id="6BS-Yc-8iG" customClass="OwnerViewController" customModule="TrackTruck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QWY-QP-2tr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -677,7 +676,6 @@
                                 <state key="normal" title="Iniciar Sesion"/>
                                 <connections>
                                     <action selector="loginButtonTappedWithSender:" destination="vpc-1o-p8N" eventType="touchUpInside" id="fBN-JB-tAf"/>
-                                    <segue destination="kt7-ew-cyJ" kind="presentation" id="vIz-Wo-ACB"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contrasena" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="79G-lG-OAo">
@@ -1028,7 +1026,7 @@
         <!--Navigation Controller-->
         <scene sceneID="mFi-An-A3A">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kt7-ew-cyJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="nav" automaticallyAdjustsScrollViewInsets="NO" id="kt7-ew-cyJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ejq-Kp-AkW">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1042,7 +1040,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVf-KB-DDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1266.4000000000001" y="2249.3253373313346"/>
+            <point key="canvasLocation" x="-1266" y="2072"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dim-Ub-t5u">

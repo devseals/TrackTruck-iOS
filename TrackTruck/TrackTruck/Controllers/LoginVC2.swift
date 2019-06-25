@@ -77,6 +77,10 @@ class LoginVC2: UIViewController {
             if Success{
                 //REDIRECCIONAR A MAIN OWNER
                 self.dismiss(animated: true, completion: nil)
+                let ownerViewController = self.storyboard?.instantiateViewController(withIdentifier: "nav")
+                as! UINavigationController
+                self.present(ownerViewController, animated: true, completion: nil)
+                
             }else{
                 OperationQueue.main.addOperation {
                     
@@ -107,6 +111,10 @@ class LoginVC2: UIViewController {
             }
         })
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }
