@@ -21,7 +21,7 @@ class AddSaleViewController: UIViewController {
         guard   let detail = detailText.text, detailText.text != "",
             let value = valueText.text, valueText.text != ""
             else {
-                self.showAlert(with: "ERROR", message: "COMPLETA LOS CAMPOS")
+                self.showAlert(with: "Error", message: "Completa los campos")
                 return
         }
         
@@ -35,7 +35,7 @@ class AddSaleViewController: UIViewController {
                 Success in
                 if Success {
                     print("Saved Sale")
-                   
+                    self.showAlert(with: "Exito", message: "Se registro la venta de forma exitosa")
                 } else {
                     self.showAlert(with: "Error: ", message: "Algo salio mal")
                 }

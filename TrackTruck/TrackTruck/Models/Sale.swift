@@ -27,7 +27,10 @@ struct Sale{
                     var newSale = Sale()
                     newSale.value = sale["value"] as! Double
                     newSale.content = sale["content"] as! String
-                    newSale.date = sale["date"] as! String
+                    //cut the date
+                    let sampleDate = sale["date"] as! String
+                    let indexEndOfText = sampleDate.index(sampleDate.endIndex, offsetBy: -9)
+                    newSale.date = String(sampleDate[..<indexEndOfText])
 
                     let employee = sale["employees"] as! [String: Any]
                     newSale.employeeName = employee["name"] as! String

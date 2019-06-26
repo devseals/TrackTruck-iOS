@@ -42,6 +42,7 @@ class AddReviewViewController: UIViewController {
                 OperationQueue.main.addOperation {
                     _ = self.navigationController?.popViewController(animated: true)
                 }
+                self.showAlert(with: "Exito", message: "Se registro la reseña de forma exitosa")
             }else{
                 self.showAlert(with: "Error:", message: "Algo salio mal")
             }

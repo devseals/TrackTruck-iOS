@@ -35,10 +35,10 @@ class LoginConsumer: UIViewController {
             if Success {
                 AuthService.instance.logInUser(username: user, password: pass, completion: {Success in
                     if Success{
-                        DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: "reviewVC", sender: self)
+                       DispatchQueue.main.async {
+                          self.performSegue(withIdentifier: "reviewVC", sender: self)
                         }
-                        self.showAlert(with: "Exito!", message: "Se registro de forma exitosa")
+                          self.showAlert(with: "Exito", message: "Se registro de forma exitosa")
                     }else{
                         OperationQueue.main.addOperation {
                             self.showAlert(with: "Error", message: "Contrasena Incorrecta")
@@ -67,7 +67,7 @@ class LoginConsumer: UIViewController {
                 }
             }else{
                 OperationQueue.main.addOperation {
-                    self.showAlert(with: "Error", message: "Contraseña Incorrecta")
+                    self.showAlert(with: "Error", message: "Contrasena Incorrecta")
                 }
             }
         })

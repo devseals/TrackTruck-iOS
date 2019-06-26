@@ -30,6 +30,7 @@ class DetailViewController: UIViewController {
         mapView.addAnnotation(selectedFoodTruck!)
         centerMap(CLLocation(latitude: selectedFoodTruck!.latitude, longitude: selectedFoodTruck!.longitude))
         self.navigationItem.title=selectedFoodTruck?.name
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: nil, action: nil)
     }
     
     func centerMap( _ location: CLLocation){
@@ -49,9 +50,13 @@ class DetailViewController: UIViewController {
     
     @IBAction func addButtonTapped(sender: UIButton){
         if AuthService.instance.isAuthenticated == true && AuthService.instance.userId != nil{
-            performSegue(withIdentifier: "addReviewVC", sender: self)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "addReviewVC", sender: self)
+            }
         }else{
-            performSegue(withIdentifier: "logConsumer", sender: self)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "logConsumer", sender: self)
+            }
         }
         
     }
