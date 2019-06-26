@@ -33,6 +33,7 @@
 		B5EE3FF622A8696A00B004DD /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE3FF522A8696A00B004DD /* ReviewsViewController.swift */; };
 		B5EE3FF822A86A9D00B004DD /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE3FF722A86A9D00B004DD /* AddReviewViewController.swift */; };
 		B5EE3FFA22A86C1D00B004DD /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE3FF922A86C1D00B004DD /* ReviewCell.swift */; };
+		F4BC7EAB22C323FF00FCE69F /* LoginConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BC7EAA22C323FF00FCE69F /* LoginConsumer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		B5EE3FF522A8696A00B004DD /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
 		B5EE3FF722A86A9D00B004DD /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		B5EE3FF922A86C1D00B004DD /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		F4BC7EAA22C323FF00FCE69F /* LoginConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConsumer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				51FC79EB22B4384E00A69E3B /* OwnerViewController.swift */,
 				51FC79ED22B43D4900A69E3B /* SalesViewController.swift */,
 				7D93F1AF22B8758700A604D6 /* AddEmployeeViewController.swift */,
+				F4BC7EAA22C323FF00FCE69F /* LoginConsumer.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				B50E3025229EE45100B4B657 /* Foodtruck.swift in Sources */,
 				B5EE3FFA22A86C1D00B004DD /* ReviewCell.swift in Sources */,
 				51F6164922B171F8007B130C /* AddSaleViewController.swift in Sources */,
+				F4BC7EAB22C323FF00FCE69F /* LoginConsumer.swift in Sources */,
 				51FC79EE22B43D4900A69E3B /* SalesViewController.swift in Sources */,
 				B50E3029229EF48A00B4B657 /* Review.swift in Sources */,
 				B50E300C229EE07000B4B657 /* AppDelegate.swift in Sources */,

@@ -76,10 +76,7 @@ class LoginVC2: UIViewController {
         AuthService.instance.logInOwner(username: user, password: pass, completion: {Success in
             if Success{
                 //REDIRECCIONAR A MAIN OWNER
-                self.dismiss(animated: true, completion: nil)
-                let ownerViewController = self.storyboard?.instantiateViewController(withIdentifier: "nav")
-                as! UINavigationController
-                self.present(ownerViewController, animated: true, completion: nil)
+                  self.performSegue(withIdentifier: "logOwner", sender: self)
                 
             }else{
                 OperationQueue.main.addOperation {
@@ -101,16 +98,10 @@ class LoginVC2: UIViewController {
         AuthService.instance.logInEmployee(username: user, password: pass, completion: {Success in
             if Success{
                 //REDIRECCIONAR A MAIN PARA EMPLOYEE
-                self.dismiss(animated: true, completion: nil)
-                let sellerViewController = self.storyboard?.instantiateViewController(withIdentifier: "nav2")
-                    as! UINavigationController
-                self.present(sellerViewController, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "logSeller", sender: self)
         
             }else{
-                OperationQueue.main.addOperation {
-                    
                     self.showAlert(with: "Error", message: "Contrasena Incorrecta")
-                }
             }
         })
         
