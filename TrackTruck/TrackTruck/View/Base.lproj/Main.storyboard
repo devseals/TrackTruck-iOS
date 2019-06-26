@@ -139,7 +139,6 @@
                                 <rect key="frame" x="16" y="191" width="58" height="30"/>
                                 <state key="normal" title="Reseñas"/>
                                 <connections>
-                                    <action selector="reviewsButtonTappedWithSender:" destination="NjQ-eF-amP" eventType="touchUpInside" id="rfJ-dP-Cg8"/>
                                     <segue destination="dYw-Qq-eUk" kind="show" identifier="showReviewsVC" id="63B-wM-wOC"/>
                                 </connections>
                             </button>
