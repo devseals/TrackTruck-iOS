@@ -101,7 +101,10 @@ class LoginVC2: UIViewController {
         AuthService.instance.logInEmployee(username: user, password: pass, completion: {Success in
             if Success{
                 //REDIRECCIONAR A MAIN PARA EMPLOYEE
-                
+                self.dismiss(animated: true, completion: nil)
+                let sellerViewController = self.storyboard?.instantiateViewController(withIdentifier: "nav2")
+                    as! UINavigationController
+                self.present(sellerViewController, animated: true, completion: nil)
         
             }else{
                 OperationQueue.main.addOperation {

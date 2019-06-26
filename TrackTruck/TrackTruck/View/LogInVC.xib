@@ -76,7 +76,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntC-Hg-gsk">
-                    <rect key="frame" x="136" y="266" width="32" height="21"/>
+                    <rect key="frame" x="136.5" y="266" width="32" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="32" id="bj0-Dw-1rH"/>
                     </constraints>
@@ -85,14 +85,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy3-Bv-xE6">
-                    <rect key="frame" x="32" y="245" width="79" height="30"/>
+                    <rect key="frame" x="32" y="245" width="79.5" height="30"/>
                     <state key="normal" title="Registrarse"/>
                     <connections>
                         <action selector="registerButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="Ywi-hd-OBT"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUc-7m-93v">
-                    <rect key="frame" x="211" y="245" width="69" height="30"/>
+                    <rect key="frame" x="211.5" y="245" width="68.5" height="30"/>
                     <state key="normal" title="Cancelar"/>
                     <connections>
                         <action selector="cancelButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="o1g-YS-Ziv"/>
@@ -139,47 +139,3 @@
         </view>
     </objects>
 </document>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

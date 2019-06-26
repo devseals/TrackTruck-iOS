@@ -13,6 +13,7 @@ class OwnerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: nil, action: nil)
         // Do any additional setup after loading the view.
     }
     
