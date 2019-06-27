@@ -439,11 +439,12 @@
                         <outlet property="phoneTextField" destination="pYf-TQ-66J" id="v36-Yw-ofs"/>
                         <outlet property="usernameTextField" destination="FR4-5g-h5T" id="fc1-AL-Sm9"/>
                         <outlet property="usernameTextField2" destination="JHs-dd-qSd" id="W3o-SF-Ny0"/>
+                        <segue destination="l1B-Ca-psD" kind="show" identifier="reviewVC" id="mSO-Ab-inT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81W-R5-Agy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3732" y="1513.4932533733136"/>
+            <point key="canvasLocation" x="3369" y="1531"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Y8-y7-Off">
@@ -1206,7 +1207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWE-r5-yQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="1515"/>
+            <point key="canvasLocation" x="1873" y="1531"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mFi-An-A3A">
@@ -1258,4 +1259,7 @@
         <image name="contact" width="25" height="25"/>
         <image name="phone" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="mSO-Ab-inT"/>
+    </inferredMetricsTieBreakers>
 </document>
